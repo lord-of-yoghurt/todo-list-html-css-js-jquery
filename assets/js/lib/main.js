@@ -3,10 +3,11 @@ $("ul").on("click", "li", function() { // select parent element, apply click to 
   $(this).toggleClass("complete");
 });
 
-// click X to delete a task
+// click trash icon to delete a task
 $("ul").on("click", "span", function(e) {
   $(this).parent().fadeOut(200, function(){
     $(this).remove();
+    checkTodos();
   });
   e.stopPropagation();
 });
@@ -24,6 +25,20 @@ $("input[type='text']").keypress(function(e) {
 
 // click the + icon to show input form
 $(".fa-plus").click(function() {
+  showInputField();
+});
+
+const checkTodos = () => {
+  // if the input field is not showing
+  // AND
+  // if there are no todos,
+  // show the input field
+  if ($("ul").children().length === 0 && $("input[type='text']").css("display") === "none") {
+    showInputField();
+  }
+}
+
+const showInputField = () => {
   $("input[type='text']").fadeToggle();
   $("input[type='text']").focus();
-});
+}
