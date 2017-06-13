@@ -17,7 +17,7 @@ $("input[type='text']").keypress(function(e) {
     // grab user input
     let task = $(this).val();
     // create new li and append to ul
-    $("ul.list").append(`<li><span>X</span> ${task}</li>`);
+    $("ul.list").append(`<li><span><i class="fa fa-trash"></i></span> ${task}</li>`);
     $(this).val("");
   }
 });
