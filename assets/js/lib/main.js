@@ -21,3 +21,9 @@ $("input[type='text']").keypress(function(e) {
     $(this).val("");
   }
 });
+
+// click the + icon to show input form
+$(".fa-plus").click(function() {
+  $("input[type='text']").fadeToggle();
+  $("input[type='text']").focus();
+});
