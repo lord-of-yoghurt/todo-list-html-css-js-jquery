@@ -1,5 +1,5 @@
 // mark todos complete by clicking
-$("ul").on("click", "li", function() {
+$("ul").on("click", "li", function() { // select parent element, apply click to each child
   $(this).toggleClass("complete");
 });
 
